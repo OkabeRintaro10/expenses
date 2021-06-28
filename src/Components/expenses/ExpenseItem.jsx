@@ -10,8 +10,6 @@ function ExpenseItem(props) {
     setTitle("Updated");
   };
 
-  console.log(title);
-
   return (
     <Card className="expense-item">
       <ExpDate date={props.date} />
