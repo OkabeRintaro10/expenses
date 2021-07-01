@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import Expense from "./Components/expenses/Expense";
 import NewExpense from "./Components/Input/NewExpense";
-
+import Chart from "./Components/expenses/Chart";
 const expense = [
   {
     id: "e1",
@@ -37,6 +37,7 @@ function App() {
   return (
     <div className="App">
       <NewExpense data={onExpenseDataHandler} />
+      <Chart />
       <Expense item={expenses} />
     </div>
   );
