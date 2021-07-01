@@ -17,6 +17,7 @@
   flex-flow: column-reverse;
   justify-content: flex-start;
   flex: 1;
+  text-transform: capitalize;
 }
 
 .expense-item h2 {

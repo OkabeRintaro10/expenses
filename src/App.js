@@ -1,41 +1,43 @@
+import React, { useState } from "react";
 import "./App.css";
 import Expense from "./Components/expenses/Expense";
 import NewExpense from "./Components/Input/NewExpense";
 
-function App() {
-  const expense = [
-    {
-      id: "e1",
-      title: "Toilet Paper",
-      amount: 94.12,
-      date: new Date(2020, 7, 14),
-    },
-    { id: "e2", title: "New TV", amount: 799.49, date: new Date(2021, 2, 12) },
-    {
-      id: "e3",
-      title: "Car Insurance",
-      amount: 294.67,
-      date: new Date(2021, 2, 28),
-    },
-    {
-      id: "e4",
-      title: "New Desk (Wooden)",
-      amount: 450,
-      date: new Date(2021, 5, 12),
-    },
-  ];
+const expense = [
+  {
+    id: "e1",
+    title: "Toilet Paper",
+    amount: 94.12,
+    date: new Date(2020, 7, 14),
+  },
+  { id: "e2", title: "New TV", amount: 799.49, date: new Date(2021, 2, 12) },
+  {
+    id: "e3",
+    title: "Car Insurance",
+    amount: 294.67,
+    date: new Date(2021, 2, 28),
+  },
+  {
+    id: "e4",
+    title: "New Desk (Wooden)",
+    amount: 450,
+    date: new Date(2021, 5, 12),
+  },
+];
 
-  const enteredExpenseData = (NewExpense) => {
-    const AddExpense = {
-      ...NewExpense,
-      expense,
-    };
-    console.log(AddExpense);
+function App() {
+  const [expenses, setExpense] = useState(expense);
+
+  const onExpenseDataHandler = (NewExpense) => {
+    setExpense((prevExpense) => {
+      return [NewExpense, ...prevExpense];
+    });
+    console.log(NewExpense);
   };
   return (
     <div className="App">
-      <NewExpense data={enteredExpenseData} />
-      <Expense item={expense} />
+      <NewExpense data={onExpenseDataHandler} />
+      <Expense item={expenses} />
     </div>
   );
 }
