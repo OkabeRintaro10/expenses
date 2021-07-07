@@ -32,7 +32,6 @@ function App() {
     setExpense((prevExpense) => {
       return [NewExpense, ...prevExpense];
     });
-    console.log(NewExpense);
   };
   return (
     <div className="App">
