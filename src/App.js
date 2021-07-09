@@ -2,26 +2,25 @@ import React, { useState } from "react";
 import "./App.css";
 import Expense from "./Components/expenses/Expense";
 import NewExpense from "./Components/Input/NewExpense";
-import Chart from "./Components/expenses/Chart";
 const expense = [
   {
-    id: "e1",
-    title: "Toilet Paper",
-    amount: 94.12,
-    date: new Date(2020, 7, 14),
+    id: "",
+    title: "",
+    amount: null,
+    date: new Date(null, null, null),
   },
-  { id: "e2", title: "New TV", amount: 799.49, date: new Date(2021, 2, 12) },
+  { id: "", title: "", amount: null, date: new Date(null, null, null) },
   {
-    id: "e3",
-    title: "Car Insurance",
-    amount: 294.67,
-    date: new Date(2021, 2, 28),
+    id: "",
+    title: "",
+    amount: null,
+    date: new Date(null, null, null),
   },
   {
-    id: "e4",
-    title: "New Desk (Wooden)",
-    amount: 450,
-    date: new Date(2021, 5, 12),
+    id: "",
+    title: "",
+    amount: null,
+    date: new Date(null, null, null),
   },
 ];
 
@@ -36,7 +35,6 @@ function App() {
   return (
     <div className="App">
       <NewExpense data={onExpenseDataHandler} />
-      <Chart />
       <Expense item={expenses} />
     </div>
   );

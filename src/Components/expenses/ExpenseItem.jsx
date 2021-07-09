@@ -12,7 +12,7 @@ function ExpenseItem(props) {
           <h2>{props.title}</h2>
         </div>
         <div className="expense-item__price">
-          <h2>${props.amount}</h2>
+          <h2>&#8377;{props.amount}</h2>
         </div>
       </Card>
     </li>
